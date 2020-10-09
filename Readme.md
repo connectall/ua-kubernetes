@@ -12,7 +12,9 @@ Please refer to https://wiki.connectall.com/ca/latest/user-guide/adapters/custom
 
 ## Define application links
 * Create an application link in ConnectALL between Kubernetes and a destination application of your choice
-* Two types of deployment are supported. 1) The 'Deployment' issue type allows the user to map the image and replicas field to start up a simple container. Note the title field of the issue is usually mapped to the name of the deployment. All three labels must be provided. 2) The "Deployment By Json" issue type allows a more complex container to be deployed. The 'Deployment JSON' field has the deployment yaml converted to json format. You can use the web site https://www.convertjson.com/yaml-to-json.htm to assist with the conversion'. Note the issue title field must also be mapped to the deployment name, and must match the name in the json.
+* Two types of deployment are supported:
+** The 'Deployment' issue type allows the user to map the image and replicas field to start up a simple container. Note the title field of the issue is usually mapped to the name of the deployment. All three labels must be provided.
+** The "Deployment By Json" issue type allows a more complex container to be deployed. The 'Deploymnent JSON' field has the deployment yaml converted to json format. You can use the web site https://www.convertjson.com/yaml-to-json.htm to assist with the conversion'. Note the issue title field must also be mapped to the deployment name, and must match the name in the json.
 * Navigate to `Configuration -> Connections` screen and create a new connection to Kubernetes using `https://localhost:8081` as the endpoint (or whatever the port that your kubernetes proxy is running on)
 * In the Entity mapping tab under Advanced Properties choose "Sync Type" as POLL
 
