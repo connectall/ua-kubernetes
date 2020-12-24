@@ -6,7 +6,7 @@
     "labels": {
       "app": "nginx"
     },
-    "name": "test3"
+    "name": "nginx.yaml"
   },
   "spec": {
     "replicas": 1,

@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "fde6acb7-1f28-4ce8-9874-d95a3fa7a57b",
+		"name": "Kubernetes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create deployment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"name\": \"test25\"    },\n    \"spec\": {\n        \"selector\": {\n            \"matchLabels\": {\n                \"app\": \"test11\"\n            }\n        },\n        \"template\": {\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"image\": \"nginx\",\n                        \"name\": \"test11\"\n                    }\n                ]\n            },\n            \"metadata\": {\n                \"labels\": {\n                    \"app\": \"test11\"\n                }\n            }\n        },\n        \"replicas\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/apis/apps/v1/namespaces/default/deployments/test25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"apis",
+						"apps",
+						"v1",
+						"namespaces",
+						"default",
+						"deployments",
+						"test25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create deployment Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"name\": \"test25\"    },\n    \"spec\": {\n        \"selector\": {\n            \"matchLabels\": {\n                \"app\": \"test11\"\n            }\n        },\n        \"template\": {\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"image\": \"nginx\",\n                        \"name\": \"test11\"\n                    }\n                ]\n            },\n            \"metadata\": {\n                \"labels\": {\n                    \"app\": \"test11\"\n                }\n            }\n        },\n        \"replicas\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/apis/apps/v1/namespaces/default/deployments/test25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"apis",
+						"apps",
+						"v1",
+						"namespaces",
+						"default",
+						"deployments",
+						"test25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Deployments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/apis/apps/v1/namespaces/default/deployments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"apis",
+						"apps",
+						"v1",
+						"namespaces",
+						"default",
+						"deployments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create job minimal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"name\": \"test8\"\n    },\n    \"spec\": {\n        \"template\": {\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"name\": \"test8\",\n                        \"image\": \"dougbass/connectall:test-harness\"\n                    }\n                ],\n                \"restartPolicy\": \"Never\"\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/apis/batch/v1/namespaces/default/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"apis",
+						"batch",
+						"v1",
+						"namespaces",
+						"default",
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: job
+metadata:
+  name: devops-123
+spec:
+  ttlSecondsAfterFinished: 0
+  template:
+    spec:
+      containers:
+      - name: test-harness
+        image: dougbass/connectall:test-harness
+        imagePullPolicy: Never
+        env:
+          - name: jirakey
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: applink
+            value: jira2kubernetes
+          - name: ConnectAllUrl
+            value: http://localhost:8090
+          - name: ConnectAllApiKey
+            value: 0c2f0908-b03b-4512-a551-5aed48e86a85
+      restartPolicy: Never
+  backoffLimit: 0
