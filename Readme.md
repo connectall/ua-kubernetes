@@ -1,4 +1,4 @@
-# ConnectALL Kubernetes Adapter 
+# ua-kubernetes
 
 ConnectALL Kubernetes Adapter is developed as an extension to the Universal Adapter capability of ConnectALL. The adapter specifications will let the user create a kubernetes deployment and get the status of all running deployments. This would be very useful in a configuration control environment like ServiceNow where a ticket (like a CI issue) is created to start a deployment.
 
